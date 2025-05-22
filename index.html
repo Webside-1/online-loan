@@ -48,7 +48,7 @@
       font-size: 18px;
     }
 
-    .btn, .cta {
+    .btn, .cta, .promo-button {
       display: inline-block;
       width: 100%;
       background-color: #6e5eff;
@@ -64,16 +64,6 @@
 
     .promo-button {
       background-color: #665fef;
-      padding: 10px 16px;
-      font-size: 14px;
-      font-weight: bold;
-      border-radius: 8px;
-      display: inline-block;
-      text-align: center;
-      text-decoration: none;
-      color: white;
-      width: auto;
-      max-width: 250px;
     }
 
     .promo-button:hover {
@@ -124,7 +114,6 @@
       padding: 30px 20px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
     }
 
     .promo-image {
@@ -135,6 +124,7 @@
 
     .promo-text {
       margin-top: 20px;
+      text-align: center;
       color: #333;
       font-size: 18px;
     }
@@ -149,7 +139,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 15px;
-      background-color: #e0e7ff;
+      background-color: #e0e7ff !important;
       padding: 10px;
       border-radius: 10px;
     }
@@ -248,6 +238,25 @@
       margin-right: 15px;
       color: #aaa;
       font-size: 20px;
+    }
+
+    /* Custom small button for the final promo */
+    .small-promo-button {
+      display: inline-block;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      background-color: #665fef;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      width: auto;
+      margin-top: 15px;
+    }
+
+    .small-promo-button:hover {
+      background-color: #4368e4;
     }
   </style>
 </head>
@@ -351,7 +360,7 @@
     <img src="https://i.ibb.co/q3W93MjW/features.png" class="promo-image" />
     <div class="promo-text">
       <p>Wait for the decision<br>Decision made in just 1 minute</p>
-      <a class="promo-button" href="https://forms.gle/UjCRzKGr3cgYahkv8" target="_blank">Apply for a loan</a>
+      <a class="small-promo-button" href="https://forms.gle/UjCRzKGr3cgYahkv8" target="_blank">Apply for a loan</a>
     </div>
   </section>
 

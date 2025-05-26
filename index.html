@@ -2,180 +2,427 @@
 <html lang="si">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CashUp – Online Loan</title>
+  <title>ණය අයදුම්පත</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
-      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
       margin: 0;
-      padding: 0;
-      color: #333;
+      padding: 20px 10px;
     }
 
-    header, section, footer {
-      padding: 20px;
-      margin: auto;
-      max-width: 800px;
-    }
-
-    header {
-      background-color: #004aad;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    h1, h2, h3 {
-      margin-top: 0;
-    }
-
-    .slider-container,
-    .repayment,
-    .features,
-    .steps,
-    .requirements,
-    .contact {
-      background: white;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    input[type="range"] {
+    .container,
+    .section-wrapper {
+      max-width: 400px;
       width: 100%;
-      margin-top: 10px;
+      margin: 0 auto 30px;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .slider-container {
+      margin: 20px 0;
+    }
+
+    input[type=range] {
+      width: 100%;
     }
 
     .output {
-      font-size: 20px;
+      font-size: 24px;
+      font-weight: bold;
       margin-top: 10px;
-      font-weight: bold;
-      color: #004aad;
     }
 
-    .btn {
+    .repayment {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+
+    .btn, .cta, .promo-button {
       display: inline-block;
-      margin-top: 20px;
-      background-color: #28a745;
+      width: 100%;
+      background-color: #6e5eff;
       color: white;
-      padding: 12px 24px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background-color: #218838;
-    }
-
-    ul, ol {
-      padding-left: 20px;
-    }
-
-    footer {
-      background: #eee;
       text-align: center;
+      text-decoration: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .promo-button {
+      background-color: #665fef;
+    }
+
+    .promo-button:hover {
+      background-color: #4368e4;
+    }
+
+    .eligibility-container {
+      max-width: 400px;
+      margin: 0 auto 30px;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      background: white;
+      padding: 16px 20px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    }
+
+    .icon {
+      font-size: 28px;
+      color: #9b7bff;
+      background-color: #f1edff;
+      border-radius: 50%;
+      padding: 10px;
+      margin-right: 16px;
+    }
+
+    .info h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #222;
+    }
+
+    .info p {
+      margin: 4px 0 0;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .promo-section {
+      max-width: 400px;
+      width: 100%;
+      margin: 40px auto;
+      background-color: #f9f9ff;
+      padding: 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .promo-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .promo-text {
+      margin-top: 20px;
+      text-align: center;
+      color: #333;
+      font-size: 18px;
+    }
+
+    .steps-section {
+      max-width: 400px;
+      width: 100%;
+      margin: 30px auto;
+    }
+
+    .step {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      background-color: #e0e7ff !important;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .number {
+      background-color: #4ff990ec;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 12px;
+    }
+
+    .check {
+      margin-left: auto;
+      color: rgb(70, 111, 244);
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .step .text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .features-section {
+      max-width: 400px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .features-section h2 {
+      text-align: center;
+    }
+
+    .footer {
+      max-width: 400px;
+      width: 100%;
+      margin: 40px auto;
+      background-color: #000;
+      padding: 40px 20px;
+      color: #aaa;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .footer-links div {
+      flex: 1 1 200px;
+    }
+
+    .footer-links a {
+      display: block;
+      color: #aaa;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .footer-contact {
+      border-top: 1px solid #222;
+      padding-top: 30px;
+    }
+
+    .footer-contact h3 {
+      color: #fff;
+      margin-bottom: 15px;
+    }
+
+    .footer-contact p {
+      margin: 8px 0;
+      color: #7fffaf;
+      font-size: 16px;
+    }
+
+    .footer-contact i {
+      margin-right: 10px;
+      color: #7fffaf;
+    }
+
+    .social-icons a {
+      margin-right: 15px;
+      color: #aaa;
+      font-size: 20px;
+    }
+
+    /* Custom small button for the final promo */
+    .small-promo-button {
+      display: inline-block;
+      padding: 8px 16px;
       font-size: 14px;
+      font-weight: bold;
+      background-color: #665fef;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 8px;
+      width: auto;
+      margin-top: 15px;
     }
 
-    .contact p {
-      margin: 5px 0;
-    }
-
-    @media (max-width: 600px) {
-      header, section, footer {
-        padding: 15px;
-      }
-
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
+    .small-promo-button:hover {
+      background-color: #4368e4;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>CashUp – රු 500,000 දක්වා ණය</h1>
-  <p>සම්පූර්ණයෙන්ම Online | විනාඩි 15න් අයදුම් කරන්න!</p>
-</header>
+  <div class="container">
+    <h2>රු 500,000 දක්වා ණය – සම්පූර්ණයෙන්ම Online!</h2>
+    <p>සරල අයදුම් ක්‍රියාවලියක් – ඔබේ හැඳුනුම්පත පමණක් අවශ්‍ය වේ.</p>
 
-<section class="slider-container">
-  <label for="loanRange">ඔබගේ ණය මුදල තෝරන්න:</label>
-  <input type="range" id="loanRange" min="30000" max="500000" step="10000" value="30000" />
-  <div class="output">රු <span id="loanAmount">30,000</span></div>
-</section>
+    <div class="slider-container">
+      <label for="loanRange">ඔබගේ ණය මුදල තෝරන්න:</label>
+      <input type="range" id="loanRange" min="30000" max="500000" step="10000" value="30000" />
+      <div class="output">රු <span id="loanAmount">30,000</span></div>
+    </div>
 
-<section class="repayment">
-  <h3>ගෙවීම් විස්තර</h3>
-  මුළු ආපසු ගෙවීමේ මුදල: රු <span id="repaymentAmount">32,400</span><br>
-  පොලී අනුපාතය: <span id="interestRate">8%</span><br>
-  <strong>කාලය:</strong> <span id="duration">6</span> මාස<br>
-  <strong>මාසික ගෙවීම:</strong> රු <span id="monthlyPayment">5,400</span>
-  <br><a class="btn" href="https://forms.gle/SeQ5BrQbjRD3nh1J7" target="_blank">දැන්ම ණයක් ඉල්ලන්න</a>
-</section>
+    <div class="repayment">
+      මුළු ආපසු ගෙවීමේ මුදල: රු <span id="repaymentAmount">32,400</span><br>
+      පොලී අනුපාතය: <span id="interestRate">8%</span><br>
+      <strong>කාලය:</strong> <span id="duration">6</span> මාස<br>
+      <strong>මාසික ගෙවීම:</strong> රු <span id="monthlyPayment">5,400</span>
+    </div>
 
-<section class="requirements">
-  <h3>අවශ්‍යතා</h3>
-  <ul>
-    <li>👤 වයස: අවුරුදු 20–60 අතර</li>
-    <li>📍 නවාසිකයෙකු විය යුතුය – ශ්‍රී ලංකාවේ</li>
-    <li>💳 ස්ථිර ආදායමක් තිබිය යුතුය</li>
-  </ul>
-</section>
+    <a class="btn" href="https://forms.gle/SeQ5BrQbjRD3nh1J7" target="_blank">ණයක් ඉල්ලන්න</a>
+  </div>
 
-<section class="steps">
-  <h3>අයදුම් ක්‍රියාවලිය</h3>
-  <ol>
-    <li>ඔබේ ණය මුදල තෝරන්න</li>
-    <li>තීරණය සඳහා රැදී සිටින්න (1මිනිටුවක්)</li>
-    <li>මුදල් ඔබේ ගිණුමට ලැබේ</li>
-  </ol>
-</section>
+  <div class="eligibility-container">
+    <div class="card">
+      <div class="icon">👤</div>
+      <div class="info">
+        <h3>වයස</h3>
+        <p>අවුරුදු 20–60 අතර</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon">📍</div>
+      <div class="info">
+        <h3>නවසී ස්ථානය</h3>
+        <p>ශ්‍රී ලංකාවේ නවාසිකයෙකු වීම</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon">💳</div>
+      <div class="info">
+        <h3>රැකියාව</h3>
+        <p>ස්ථිර ආදායමක් තිබීම</p>
+      </div>
+    </div>
+    <a class="cta" href="https://forms.gle/SeQ5BrQbjRD3nh1J7" target="_blank">දැන්ම ණයක් ඉල්ලන්න</a>
+  </div>
 
-<section class="features">
-  <h3>අපගේ විශේෂත්වය</h3>
-  <ul>
-    <li>~ අවම ආපසු ගෙවීම් – ඔබට පහසු</li>
-    <li>✓ විශ්වාසනීය සේවාවක් – CashUp</li>
-    <li>101% සරලයි – නිවසේ සිටම මුදල්</li>
-  </ul>
-</section>
+  <section class="promo-section">
+    <img src="https://i.ibb.co/nMDZ3sMb/pexels-moose-photos-170195-1036622.jpg" class="promo-image" />
+    <div class="promo-text">
+      <p>ඔබගේ පළමු online ණය – විනාඩි 15න්!</p>
+      <a class="promo-button" href="https://forms.gle/SeQ5BrQbjRD3nh1J7" target="_blank">Apply for a loan</a>
+    </div>
+  </section>
 
-<section class="contact">
-  <h3>Contact Us</h3>
-  <p><strong>දුරකථන:</strong> 072 479 7182</p>
-  <p><strong>සේවාව:</strong> CashUp</p>
-  <p><strong>විද්‍යුත් ලිපිනය:</strong> cashup@gmail.com</p>
-  <p><strong>සෙවාව ලබිය හැකි වේලාව:</strong> දිනපතා 8:00 AM - 10:30 PM</p>
-</section>
+  <div class="steps-section">
+    <div class="step">
+      <div class="number">1</div>
+      <div class="text"><strong>ඔබේ ණය මුදල තෝරන්න</strong></div>
+    </div>
+    <div class="step">
+      <div class="number">2</div>
+      <div class="text"><strong>තිරණය සඳහා රැදී සිටින්න</strong></div>
+    </div>
+    <div class="step">
+      <div class="number">3</div>
+      <div class="text"><strong>ඔබගේ ගිණුමට මුදල් ලැබේ</strong></div>
+      <div class="check">✔</div>
+    </div>
+  </div>
 
-<footer>
-  <p>© 2025 CashUp | Privacy Policy | Terms | Help</p>
-</footer>
+  <div class="features-section">
+    <h2>අපගේ විශේෂත්වය</h2>
+    <div class="card">
+      <div class="icon">~</div>
+      <div class="info">
+        <h3>ලභාදයකි</h3>
+        <p>අවම ආපසු ගෙවීම් මුදලක් නිසා අපගේ සේවාව සුපිරියකි</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon">✓</div>
+      <div class="info">
+        <h3>විශ්වාසනීයයි</h3>
+        <p>Capital Lanka යනු වගකීමකින් යුතු සේවාවකි</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="icon">101</div>
+      <div class="info">
+        <h3>සරලයි</h3>
+        <p>ඉක්මන් හා සරල මුදල් විස්දැම් ඔබගේ නිවසේ සිටම</p>
+      </div>
+    </div>
+  </div>
 
-<script>
-  const range = document.getElementById("loanRange");
-  const loanAmount = document.getElementById("loanAmount");
-  const repaymentAmount = document.getElementById("repaymentAmount");
-  const monthlyPayment = document.getElementById("monthlyPayment");
+  <section class="promo-section">
+    <img src="https://i.ibb.co/q3W93MjW/features.png" class="promo-image" />
+    <div class="promo-text">
+      <p>Wait for the decision<br>Decision made in just 1 minute</p>
+      <a class="small-promo-button" href="https://forms.gle/SeQ5BrQbjRD3nh1J7" target="_blank">Apply for a loan</a>
+    </div>
+  </section>
 
-  range.addEventListener("input", () => {
-    const amount = parseInt(range.value);
-    const interest = 0.08;
-    const duration = 6;
-    const total = amount * (1 + interest);
-    const monthly = total / duration;
+  <footer class="footer">
+    <div class="footer-links">
+      <div>
+        <a href="#">Home</a>
+        <a href="#">Apply for a loan</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Help</a>
+      </div>
+      <div>
+        <a href="#">How to pay</a>
+        <a href="#">About</a>
+        <a href="#">Terms & conditions</a>
+      </div>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact us:</h3>
+      <p><i class="fas fa-phone-alt"></i>072 456 1337</p>
+      <p><i class="fas fa-envelope"></i>Capital.lk</p>
+      <p><i class="fas fa-clock"></i>Daily 8:00 AM - 10:30 PM</p>
+      <div class="social-icons">
+        <span>Follow us</span>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
 
-    loanAmount.textContent = amount.toLocaleString();
-    repaymentAmount.textContent = total.toLocaleString(undefined, { maximumFractionDigits: 0 });
-    monthlyPayment.textContent = monthly.toLocaleString(undefined, { maximumFractionDigits: 0 });
-  });
-</script>
+  <script>
+    const loanRange = document.getElementById("loanRange");
+    const loanAmount = document.getElementById("loanAmount");
+    const repaymentAmount = document.getElementById("repaymentAmount");
+    const interestRate = document.getElementById("interestRate");
+    const duration = document.getElementById("duration");
+    const monthlyPayment = document.getElementById("monthlyPayment");
+
+    function updateLoanDetails(value) {
+      const loan = parseInt(value);
+      let months = 6;
+      if (loan <= 50000) months = 6;
+      else if (loan <= 160000) months = 12;
+      else if (loan <= 350000) months = 24;
+      else months = 36;
+
+      const interest = loan * 0.08;
+      const totalRepayment = loan + interest;
+      const monthly = totalRepayment / months;
+
+      loanAmount.textContent = loan.toLocaleString();
+      repaymentAmount.textContent = totalRepayment.toLocaleString(undefined, { maximumFractionDigits: 0 });
+      duration.textContent = months;
+      monthlyPayment.textContent = monthly.toLocaleString(undefined, { maximumFractionDigits: 0 });
+    }
+
+    updateLoanDetails(loanRange.value);
+
+    loanRange.addEventListener("input", function () {
+      updateLoanDetails(this.value);
+    });
+  </script>
 
 </body>
 </html>
